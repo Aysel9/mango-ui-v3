@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useMemo, useRef, useState } from 'react'
 import useIpAddress from '../../hooks/useIpAddress'
 import {
@@ -775,22 +776,23 @@ export default function AdvancedTradeForm({
   }
 
   return (
-    <div>
-      <ElementTitle className="hidden md:flex">
+    <div className="tradeform-general">
+     {/* <ElementTitle className="tradeform-title">
         {marketConfig.name}
-        <span className="ml-2 rounded border border-th-primary px-1 py-0.5 text-xs text-th-primary">
+       <span className="ml-2 rounded border border-th-primary px-1 py-0.5 text-xs text-th-primary">
           {initLeverage}x
         </span>
-      </ElementTitle>
+        </ElementTitle>*/}
+      <div className="tradeform-title">{marketConfig.name}</div>
       {insufficientSol ? (
-        <div className="mb-3 text-left">
+        <div className="text-left">
           <InlineNotification desc={t('add-more-sol')} type="warning" />
         </div>
       ) : null}
       <OrderSideTabs onChange={onChangeSide} side={side} />
-      <div className="grid grid-cols-12 gap-x-1.5 gap-y-0.5 text-left">
+      <div className="all-inputs-div grid grid-cols-12 gap-x-1.5 gap-y-0.5 text-left">
         <div className="col-span-12 md:col-span-6">
-          <label className="text-xxs text-th-fgd-3">{t('type')}</label>
+          <label className="mini-labels">{t('type')}</label>
           <TradeType
             onChange={onTradeTypeChange}
             value={tradeType}
@@ -800,7 +802,7 @@ export default function AdvancedTradeForm({
         <div className="col-span-12 md:col-span-6">
           {!isTriggerOrder ? (
             <>
-              <label className="text-xxs text-th-fgd-3">{t('price')}</label>
+              <label className="mini-labels">{t('price')}</label>
               <Input
                 type="number"
                 min="0"
@@ -826,9 +828,7 @@ export default function AdvancedTradeForm({
             </>
           ) : (
             <>
-              <label className="text-xxs text-th-fgd-3">
-                {t('trigger-price')}
-              </label>
+              <label className="mini-labels">{t('trigger-price')}</label>
               <Input
                 type="number"
                 min="0"
@@ -849,9 +849,7 @@ export default function AdvancedTradeForm({
         {isTriggerLimit && (
           <>
             <div className="col-span-12">
-              <label className="text-xxs text-th-fgd-3">
-                {t('limit-price')}
-              </label>
+              <label className="mini-labels">{t('limit-price')}</label>
               <Input
                 type="number"
                 min="0"
@@ -870,7 +868,7 @@ export default function AdvancedTradeForm({
           </>
         )}
         <div className="col-span-6">
-          <label className="text-xxs text-th-fgd-3">{t('size')}</label>
+          <label className="mini-labels">{t('size')}</label>
           <Input
             type="number"
             min="0"
@@ -887,7 +885,7 @@ export default function AdvancedTradeForm({
           />
         </div>
         <div className="col-span-6">
-          <label className="text-xxs text-th-fgd-3">{t('quantity')}</label>
+          <label className="mini-labels">{t('quantity')}</label>
           <Input
             type="number"
             min="0"
@@ -922,15 +920,15 @@ export default function AdvancedTradeForm({
                 </div>
               ) : null
             ) : roundedBorrows > 0 ? (
-              <div className="mt-2 text-xs tracking-normal text-th-fgd-4">
+              <div className="mt-2 text-m tracking-normal text-th-fgd-4">
                 <span>{closeBorrowString}</span>
               </div>
             ) : null
           ) : null}
-          <div className="flex-wrap sm:flex">
+          <div className="nowrap">
             {isLimitOrder ? (
               <div className="flex">
-                <div className="mr-4 mt-3">
+                <div className="mr-4">
                   <Tooltip
                     className="hidden md:block"
                     delay={250}
@@ -938,6 +936,7 @@ export default function AdvancedTradeForm({
                     content={t('tooltip-post')}
                   >
                     <Checkbox
+                    style={{border: "1px solid white"}}
                       checked={postOnly}
                       onChange={(e) => postOnChange(e.target.checked)}
                     >
@@ -945,7 +944,7 @@ export default function AdvancedTradeForm({
                     </Checkbox>
                   </Tooltip>
                 </div>
-                <div className="mr-4 mt-3">
+                <div className="ioc-check mr-4 mt-0">
                   <Tooltip
                     className="hidden md:block"
                     delay={250}
@@ -970,7 +969,7 @@ export default function AdvancedTradeForm({
                 && showReduceOnly(perpAccount?.basePosition.toNumber())
              */}
             {marketConfig.kind === 'perp' ? (
-              <div className="mr-4 mt-3">
+              <div className="">
                 <Tooltip
                   className="hidden md:block"
                   delay={250}
@@ -987,7 +986,7 @@ export default function AdvancedTradeForm({
                 </Tooltip>
               </div>
             ) : null}
-            {marketConfig.kind === 'perp' && tradeType === 'Limit' ? (
+          {/*  {marketConfig.kind === 'perp' && tradeType === 'Limit' ? (
               <div className="mt-3">
                 <Tooltip
                   className="hidden md:block"
@@ -1004,8 +1003,8 @@ export default function AdvancedTradeForm({
                   </Checkbox>
                 </Tooltip>
               </div>
-            ) : null}
-            {marketConfig.kind === 'spot' ? (
+            ) : null}*/}
+            {/*{marketConfig.kind === 'spot' ? (
               <div className="mt-3">
                 <Tooltip
                   delay={250}
@@ -1020,7 +1019,7 @@ export default function AdvancedTradeForm({
                   </Checkbox>
                 </Tooltip>
               </div>
-            ) : null}
+            ) : null}*/}
           </div>
           {warnUserSlippage ? (
             <div className="mt-1 flex items-center text-th-red">
@@ -1030,12 +1029,12 @@ export default function AdvancedTradeForm({
               <div className="text-xs">{t('slippage-warning')}</div>
             </div>
           ) : null}
-          <div className={`mt-3 flex`}>
+          <div className={`tradeform-buy-buton mt-3 flex`}>
             {canTrade ? (
               <button
                 disabled={disabledTradeButton}
                 onClick={onSubmit}
-                className={`flex-grow rounded-full px-6 py-2 font-bold text-white hover:brightness-[1.1] focus:outline-none disabled:cursor-not-allowed disabled:bg-th-bkg-4 disabled:text-th-fgd-4 disabled:hover:brightness-100 ${
+                className={`flex-grow rounded-full font-bold text-white hover:brightness-[1.1] focus:outline-none disabled:cursor-not-allowed disabled:bg-th-bkg-4 disabled:text-th-fgd-4 disabled:hover:brightness-100 ${
                   side === 'buy' ? 'bg-th-green-dark' : 'bg-th-red'
                 }`}
               >
@@ -1068,15 +1067,15 @@ export default function AdvancedTradeForm({
             )}
           </div>
           {tradeType === 'Market' && priceImpact ? (
-            <div className="col-span-12 mt-4 md:col-span-10 md:col-start-3">
+            <div className="mt-4">
               {editMaxSlippage ? (
-                <div className="flex items-end">
+                <div className="flex items-end ">
                   <div className="w-full">
                     <div className="mb-1 flex justify-between">
-                      <div className="text-xs text-th-fgd-3">
+                      <div className="">
                         {t('max-slippage')}
                       </div>
-                      {!isMobile ? (
+                     {/* {!isMobile ? (*/}
                         <LinkButton
                           className="text-xs font-normal"
                           onClick={() =>
@@ -1085,9 +1084,9 @@ export default function AdvancedTradeForm({
                         >
                           {showCustomSlippageForm ? t('presets') : t('custom')}
                         </LinkButton>
-                      ) : null}
+                      {/*) : null}*/}
                     </div>
-                    {showCustomSlippageForm || isMobile ? (
+                   {/* {showCustomSlippageForm || isMobile ? (*/}
                       <Input
                         type="number"
                         min="0"
@@ -1102,7 +1101,7 @@ export default function AdvancedTradeForm({
                         }
                         value={maxSlippagePercentage}
                       />
-                    ) : (
+                  {/*  ) : (
                       <ButtonGroup
                         activeValue={
                           maxSlippagePercentage
@@ -1114,7 +1113,7 @@ export default function AdvancedTradeForm({
                         unit="%"
                         values={slippagePresets}
                       />
-                    )}
+                    )}*/}
                   </div>
                   <Button
                     className="ml-3 h-10"
@@ -1155,13 +1154,12 @@ export default function AdvancedTradeForm({
               )}
             </div>
           ) : (
-            <div className="mt-2.5 flex flex-col items-center justify-center px-6 text-xs text-th-fgd-4 md:flex-row">
-              <div>
-                {t('maker-fee')}: {percentFormat.format(makerFee)}{' '}
+            <div className="flex items-center justify-center">
+              <div className="tradeform-end-div">
+                {t('maker-fee')}: {percentFormat.format(makerFee)}
               </div>
-              <span className="hidden md:block md:px-1">|</span>
-              <div>
-                {' '}
+              <span className="tradeform-end-div">|</span>
+              <div className="tradeform-end-div">
                 {t('taker-fee')}: {percentFormat.format(takerFee)}
               </div>
             </div>

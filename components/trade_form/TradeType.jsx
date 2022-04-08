@@ -13,12 +13,12 @@ const TradeType = ({ value, onChange, offerTriggers = false }) => {
     )
 
   return (
-    <Select
+    <Select className="select-option-border select-option-words"
       value={t(value.replace(/\s+/g, '-').toLowerCase())}
       onChange={onChange}
     >
       {TRADE_TYPES.map((type) => (
-        <Select.Option key={type} value={type}>
+        <Select.Option className="select-option-words" key={type} value={type}>
           {t(type.replace(/\s+/g, '-').toLowerCase())}
         </Select.Option>
       ))}

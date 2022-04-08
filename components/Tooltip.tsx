@@ -28,14 +28,14 @@ const Tooltip = ({
       content={
         content ? (
           <div
-            className={`rounded bg-th-bkg-3 p-2.5 text-xs leading-4 text-th-fgd-3 shadow-md outline-none focus:outline-none ${className}`}
+            className={`test rounded bg-th-bkg-3 p-2.5 text-xs leading-4 text-th-fgd-3 shadow-md outline-none focus:outline-none ${className}`}
           >
             {content}
           </div>
         ) : null
       }
     >
-      <div className="outline-none focus:outline-none">{children}</div>
+      <div  className="outline-none focus:outline-none">{children}</div>
     </Tippy>
   )
 }

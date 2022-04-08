@@ -330,6 +330,7 @@ const PositionsTable: React.FC = () => {
             )
           ) : (
             <div
+              style={{color: "white", fontFamily: "Roboto"}}
               className={`w-full rounded-md bg-th-bkg-1 py-6 text-center text-th-fgd-3`}
             >
               {t('no-perp')}

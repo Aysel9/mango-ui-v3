@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import dynamic from 'next/dynamic'
 import { Responsive, WidthProvider } from 'react-grid-layout'
 import round from 'lodash/round'
@@ -63,7 +64,7 @@ export const defaultLayouts = {
 }
 
 export const GRID_LAYOUT_KEY = 'mangoSavedLayouts-3.1.6'
-export const breakpoints = { xl: 1600, lg: 1280, md: 1024, sm: 768 }
+export const breakpoints = { xl: 1600, lg: 1280, md: 1024, sm: 100}
 
 const getCurrentBreakpoint = () => {
   return Responsive.utils.getBreakpointFromWidth(
@@ -118,56 +119,58 @@ const TradePageGrid: React.FC = () => {
 
   if (!mounted) return null
 
+
   return !isMobile ? (
     <>
-      <div className="pt-2">
-        <MarketDetails />
-      </div>
-      <ResponsiveGridLayout
-        layouts={savedLayouts ? savedLayouts : defaultLayouts}
-        breakpoints={breakpoints}
-        cols={{ xl: 12, lg: 12, md: 12, sm: 12 }}
-        rowHeight={15}
-        isDraggable={!uiLocked}
-        isResizable={!uiLocked}
-        onBreakpointChange={(newBreakpoint) =>
-          onBreakpointChange(newBreakpoint)
-        }
-        onLayoutChange={(layout, layouts) => onLayoutChange(layouts)}
-        measureBeforeMount
+     
+      <div className="responsive-design-grid-layout"
+        // layouts={savedLayouts ? savedLayouts : defaultLayouts}
+        // breakpoints={breakpoints}
+        // cols={{ xl: 12, lg: 12, md: 12, sm: 12 }}
+        // rowHeight={15}
+        // isDraggable={!uiLocked}
+        // isResizable={!uiLocked}
+        // onBreakpointChange={(newBreakpoint) =>
+        //   onBreakpointChange(newBreakpoint)
+        // }
+        // onLayoutChange={(layout, layouts) => onLayoutChange(layouts)}
+        // measureBeforeMount
       >
         <div key="tvChart">
-          <FloatingElement className="h-full pl-0 md:pl-0 md:pr-1 md:pb-1 md:pt-2.5">
+          <FloatingElement className="chart1">
             <TVChartContainer />
           </FloatingElement>
-        </div>
-        <div key="orderbook">
-          <Orderbook depth={orderbookDepth} />
-        </div>
-        <div key="tradeForm">
-          <TradeForm />
-        </div>
+        </div>        
         <div key="accountInfo">
-          <FloatingElement className="h-full" showConnect>
+          <FloatingElement className="account-info" showConnect>
             <AccountInfo />
           </FloatingElement>
         </div>
+
+        <div className="order-book-div" key="orderbook">
+          <Orderbook depth={orderbookDepth} />
+        </div>
+
+        <div className="trade-form-div" key="tradeForm">
+          <TradeForm />
+        </div>
+        
         <div key="marketPosition">
-          <FloatingElement className="h-full" showConnect>
+          <FloatingElement className="usdt-usdc-position-div" showConnect>
             <UserMarketInfo />
           </FloatingElement>
         </div>
         <div key="marketTrades">
-          <FloatingElement className="h-full">
+          <FloatingElement className="recent-trade-div">
             <RecentMarketTrades />
           </FloatingElement>
         </div>
         <div key="userInfo">
-          <FloatingElement className="h-full">
+          <FloatingElement className="balances-orders-fixed">
             <UserInfo />
           </FloatingElement>
         </div>
-      </ResponsiveGridLayout>
+      </div>
     </>
   ) : (
     <MobileTradePage />

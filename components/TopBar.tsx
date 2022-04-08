@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCallback, useState } from 'react'
 import Link from 'next/link'
 import { abbreviateAddress } from '../utils/index'

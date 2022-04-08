@@ -691,7 +691,8 @@ const BalancesTable = ({
             )
           ) : (
             <div
-              className={`w-full rounded-md bg-th-bkg-1 py-6 text-center text-th-fgd-3`}
+              style={{color: "white", fontFamily: "Roboto"}}
+              className={`w-full rounded-md bg-th-bkg-1 py-6 text-center`}
             >
               {t('no-balances')}
             </div>

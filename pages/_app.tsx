@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import '../node_modules/react-grid-layout/css/styles.css'
@@ -38,6 +39,8 @@ import { SlopeWalletAdapter } from '@solana/wallet-adapter-slope'
 import { BitpieWalletAdapter } from '@solana/wallet-adapter-bitpie'
 import { HuobiWalletAdapter } from '@solana/wallet-adapter-huobi'
 import { GlowWalletAdapter } from '@solana/wallet-adapter-glow'
+
+import '../styles/homepage.scss'
 
 const SENTRY_URL = process.env.NEXT_PUBLIC_SENTRY_URL
 if (SENTRY_URL) {

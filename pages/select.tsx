@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/solid'

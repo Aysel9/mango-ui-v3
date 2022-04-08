@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   I80F48,
   nativeI80F48ToUi,
@@ -153,13 +154,13 @@ export default function AccountInfo() {
 
   return (
     <>
-      <div
+      <div style={{height: "100%", padding: "20px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between" }}
         className={!connected && !isMobile ? 'blur-sm filter' : undefined}
         id="account-details-tip"
       >
         {!isMobile ? (
           mangoAccount ? (
-            <div className="flex items-center justify-between">
+            <div className="">
               <div className="h-8 w-8" />
               <ElementTitle>
                 <Tooltip
@@ -183,10 +184,11 @@ export default function AccountInfo() {
               </IconButton>
             </div>
           ) : (
-            <ElementTitle>{t('account')}</ElementTitle>
+            // <ElementTitle>{t('account')}</ElementTitle>
+            <div className="account-title">{t('account')}</div>
           )
         ) : null}
-        <div>
+        <div className="account-twith">
           {mangoAccount ? (
             <div className="-mt-2 flex justify-center text-xs">
               <a
@@ -200,9 +202,9 @@ export default function AccountInfo() {
               </a>
             </div>
           ) : null}
-          <div>
+          <div className ="account-in-write">
             <div className="flex justify-between pb-2">
-              <div className="font-normal leading-4 text-th-fgd-3">
+              <div className="">
                 {t('equity')}
               </div>
               <div className="text-th-fgd-1">
@@ -210,7 +212,7 @@ export default function AccountInfo() {
               </div>
             </div>
             <div className="flex justify-between pb-2">
-              <div className="font-normal leading-4 text-th-fgd-3">
+              <div className="">
                 {t('leverage')}
               </div>
               <div className="text-th-fgd-1">
@@ -226,7 +228,7 @@ export default function AccountInfo() {
               </div>
             </div>
             <div className={`flex justify-between pb-2`}>
-              <div className="font-normal leading-4 text-th-fgd-3">
+              <div className="">
                 {t('collateral-available')}
               </div>
               <div className={`text-th-fgd-1`}>
@@ -245,7 +247,7 @@ export default function AccountInfo() {
               </div>
             </div>
             <div className={`flex justify-between pb-2`}>
-              <div className="font-normal leading-4 text-th-fgd-3">
+              <div className="word-width">
                 {marketConfig.name} {t('margin-available')}
               </div>
               <div className={`text-th-fgd-1`}>
@@ -265,7 +267,7 @@ export default function AccountInfo() {
               </div>
             </div>
             <div className={`flex justify-between pb-2`}>
-              <div className="font-normal leading-4 text-th-fgd-3">
+              <div className="word-width">
                 {marketConfig.name} {t('estimated-liq-price')}
               </div>
               <div className={`text-th-fgd-1`}>
@@ -274,7 +276,7 @@ export default function AccountInfo() {
                   : 'N/A'}
               </div>
             </div>
-            <div className={`flex justify-between pb-2`}>
+            {/*<div className={`flex justify-between pb-2`}>
               <Tooltip
                 content={
                   <div>
@@ -289,7 +291,7 @@ export default function AccountInfo() {
                   </div>
                 }
               >
-                <div className="default-transition cursor-help border-b border-dashed border-th-fgd-3 border-opacity-20 font-normal leading-4 text-th-fgd-3 hover:border-th-bkg-2">
+                <div className="default-transition cursor-help border-b border-dashed border-th-fgd-3 border-opacity-20 hover:border-th-bkg-2">
                   {t('mngo-rewards')}
                 </div>
               </Tooltip>
@@ -319,9 +321,9 @@ export default function AccountInfo() {
                   </LinkButton>
                 )}
               </div>
-            </div>
+            </div>*/}
           </div>
-          <div className="my-2 flex items-center rounded border border-th-bkg-4 p-2.5 sm:my-1">
+          {/* <div className="my-2 flex items-center rounded border border-th-bkg-4 p-2.5 sm:my-1">
             <div className="flex items-center pr-2">
               <HeartIcon
                 className="mr-1.5 h-5 w-5 text-th-primary"
@@ -342,7 +344,7 @@ export default function AccountInfo() {
                     </div>
                   }
                 >
-                  <div className="default-transition cursor-help border-b border-dashed border-th-fgd-3 border-opacity-20 font-normal leading-4 text-th-fgd-3 hover:border-th-bkg-2">
+                  <div className="default-transition cursor-help border-b border-dashed border-th-fgd-3 border-opacity-20 hover:border-th-bkg-2">
                     {t('health')}
                   </div>
                 </Tooltip>
@@ -368,24 +370,24 @@ export default function AccountInfo() {
                 : maintHealthRatio.toFixed(2)}
               %
             </div>
-          </div>
+          </div> */}
           {mangoAccount && mangoAccount.beingLiquidated ? (
             <div className="flex items-center justify-center pt-0.5 text-xs">
               <ExclamationIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-th-red" />
               <span className="text-th-red">{t('being-liquidated')}</span>
             </div>
           ) : null}
-          <div className={`grid grid-cols-2 grid-rows-1 gap-4 pt-2 sm:pt-2`}>
+          <div className={`buttons grid grid-cols-2 grid-rows-1 gap-4 pt-2 sm:pt-2`}>
             <Button
               onClick={() => setShowDepositModal(true)}
-              className="w-full"
+              className="deposite-button"
               disabled={!connected}
             >
               <span>{t('deposit')}</span>
             </Button>
             <Button
               onClick={() => setShowWithdrawModal(true)}
-              className="w-full"
+              className="withdraw-button"
               disabled={!connected || !mangoAccount || !canWithdraw}
             >
               <span>{t('withdraw')}</span>

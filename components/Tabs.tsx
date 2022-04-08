@@ -22,11 +22,11 @@ const Tabs: FunctionComponent<TabsProps> = ({
   const { t } = useTranslation('common')
 
   return (
-    <div className={`relative mb-4 border-b border-th-fgd-4`}>
+    <div className={`relative balances-title-in`}>
       <div
-        className={`default-transition absolute bottom-[-1px] left-0 h-0.5 bg-th-primary`}
+        className={`active-class default-transition absolute bottom-[-1px] left-0 h-0.5`}
         style={{
-          maxWidth: '176px',
+          maxWidth: '252px',
           transform: `translateX(${
             tabs.findIndex((v) => v === activeTab) * 100
           }%)`,
@@ -42,7 +42,7 @@ const Tabs: FunctionComponent<TabsProps> = ({
             <a
               key={tabName}
               onClick={() => onChange(tabName)}
-              className={`default-transition relative flex cursor-pointer justify-center whitespace-nowrap pb-4 font-bold hover:opacity-100
+              className={`balances-nav default-transition relative flex cursor-pointer justify-center whitespace-nowrap pb-4 font-bold hover:opacity-100
                     ${
                       activeTab === tabName
                         ? `text-th-primary`

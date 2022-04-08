@@ -24,7 +24,7 @@ const Checkbox = ({ checked, children, disabled = false, ...props }) => (
     <div
       className={`${
         checked && !disabled ? 'border-th-primary' : 'border-th-fgd-4'
-      } default-transition flex h-4 w-4 cursor-pointer items-center justify-center rounded border`}
+      } checkbox-border h-4 w-4 default-transition flex items-center justify-center`}
     >
       <CheckIcon
         className={`${checked ? 'block' : 'hidden'} h-4 w-4 ${
@@ -33,7 +33,7 @@ const Checkbox = ({ checked, children, disabled = false, ...props }) => (
       />
     </div>
     <span
-      className={`ml-2 text-xs ${checked && !disabled ? 'text-th-fgd-2' : ''}`}
+      className={`check-text ml-2 ${checked && !disabled ? 'check-text' : ''}`}
     >
       {children}
     </span>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import { CheckCircleIcon } from '@heroicons/react/solid'

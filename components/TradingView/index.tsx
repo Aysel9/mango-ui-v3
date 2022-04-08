@@ -69,6 +69,7 @@ const TVChartContainer = () => {
     fullscreen: false,
     autosize: true,
     studiesOverrides: {
+      // 'volume.volume.color.0' : 'red'
       'volume.volume.color.0': theme === 'Mango' ? '#E54033' : '#CC2929',
       'volume.volume.color.1': theme === 'Mango' ? '#AFD803' : '#5EBF4D',
       'volume.precision': 4,
@@ -148,29 +149,29 @@ const TVChartContainer = () => {
       custom_css_url: '/tradingview-chart.css',
       loading_screen: {
         backgroundColor:
-          theme === 'Dark' ? '#1B1B1F' : theme === 'Light' ? '#fff' : '#1D1832',
-      },
+          // theme === 'Dark' ? '#1B1B1F' : theme === 'Light' ? '#fff' : '#1D1832',
+          '#1B1B1F',
+      },    
       overrides: {
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        'paneProperties.background':
-          theme === 'Dark' ? '#1B1B1F' : theme === 'Light' ? '#fff' : '#1D1832',
+        'paneProperties.background': '#1B1B1F',
+          // theme === 'Dark' ? '#1B1B1F' : theme === 'Light' ? '#fff' : '#1D1832',
         'mainSeriesProperties.candleStyle.barColorsOnPrevClose': true,
         'mainSeriesProperties.candleStyle.drawWick': true,
         'mainSeriesProperties.candleStyle.drawBorder': true,
-        'mainSeriesProperties.candleStyle.upColor':
-          theme === 'Mango' ? '#AFD803' : '#5EBF4D',
-        'mainSeriesProperties.candleStyle.downColor':
-          theme === 'Mango' ? '#E54033' : '#CC2929',
-        'mainSeriesProperties.candleStyle.borderColor':
-          theme === 'Mango' ? '#AFD803' : '#5EBF4D',
-        'mainSeriesProperties.candleStyle.borderUpColor':
-          theme === 'Mango' ? '#AFD803' : '#5EBF4D',
-        'mainSeriesProperties.candleStyle.borderDownColor':
-          theme === 'Mango' ? '#E54033' : '#CC2929',
-        'mainSeriesProperties.candleStyle.wickUpColor':
-          theme === 'Mango' ? '#AFD803' : '#5EBF4D',
-        'mainSeriesProperties.candleStyle.wickDownColor':
-          theme === 'Mango' ? '#E54033' : '#CC2929',
+        // 'mainSeriesProperties.candleStyle.upColor': 'green',
+        // 'mainSeriesProperties.candleStyle.downColor':
+        //   theme === 'Mango' ? '#E54033' : '#CC2929',
+        // 'mainSeriesProperties.candleStyle.borderColor':
+        //   theme === 'Mango' ? '#AFD803' : '#5EBF4D',
+        // 'mainSeriesProperties.candleStyle.borderUpColor':
+        //   theme === 'Mango' ? '#AFD803' : '#5EBF4D',
+        // 'mainSeriesProperties.candleStyle.borderDownColor':
+        //   theme === 'Mango' ? '#E54033' : '#CC2929',
+        // 'mainSeriesProperties.candleStyle.wickUpColor':
+        //   theme === 'Mango' ? '#AFD803' : '#5EBF4D',
+        // 'mainSeriesProperties.candleStyle.wickDownColor':
+        //   theme === 'Mango' ? '#E54033' : '#CC2929',
       },
     }
 
@@ -184,17 +185,20 @@ const TVChartContainer = () => {
       }
       setChartReady(true)
       button.textContent = 'OL'
-      if (showOrderLinesLocalStorage) {
-        button.style.color =
-          theme === 'Dark' || theme === 'Mango'
-            ? 'rgb(242, 201, 76)'
-            : 'rgb(255, 156, 36)'
-      } else {
-        button.style.color =
-          theme === 'Dark' || theme === 'Mango'
-            ? 'rgb(138, 138, 138)'
-            : 'rgb(138, 138, 138)'
-      }
+      button.style.color = 'rgb(242, 201, 76)'
+      // button.style.backgroundColor = 'rgb(242, 201, 76)'
+
+      // if (showOrderLinesLocalStorage) {
+      //   button.style.color =
+      //     theme === 'Dark' || theme === 'Mango'
+      //       ? 'rgb(242, 201, 76)'
+      //       : 'rgb(255, 156, 36)'
+      // } else {
+      //   button.style.color =
+      //     theme === 'Dark' || theme === 'Mango'
+      //       ? 'rgb(138, 138, 138)'
+      //       : 'rgb(138, 138, 138)'
+      // }
       button.setAttribute('title', t('tv-chart:toggle-order-line'))
       button.addEventListener('click', toggleOrderLines)
     })
@@ -443,15 +447,15 @@ const TVChartContainer = () => {
           ? `${order.orderType} Order #: ${order.orderId}`
           : `Order #: ${order.orderId}`
       )
-      .setBodyTextColor(
-        theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
-      )
-      .setQuantityTextColor(
-        theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
-      )
-      .setCancelButtonIconColor(
-        theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
-      )
+     // .setBodyTextColor(
+     //    theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
+     //  )
+     //  .setQuantityTextColor(
+     //    theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
+     //  )
+     //  .setCancelButtonIconColor(
+     //    theme === 'Dark' ? '#F2C94C' : theme === 'Light' ? '#FF9C24' : '#F2C94C'
+     //  )
       .setBodyBorderColor(
         order.perpTrigger?.clientOrderId
           ? '#FF9C24'

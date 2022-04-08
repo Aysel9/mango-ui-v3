@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import useMangoStore, { serumProgramId } from '../stores/useMangoStore'

@@ -4,7 +4,7 @@
 
 /* Theme */
 
-:root {
+/*:root {
   --primary: theme('colors.light-theme.orange.DEFAULT');
   --primary-dark: theme('colors.light-theme.orange.dark');
   --red: theme('colors.light-theme.red.DEFAULT');
@@ -65,13 +65,20 @@
   --fgd-3: theme('colors.mango-theme.fgd-3');
   --fgd-4: theme('colors.mango-theme.fgd-4');
   --bkg-button: theme('colors.mango-theme.bkg-button');
-}
+}*/
 
 /* Base */
 
 body {
   @apply font-body text-sm tracking-wider;
+  background: rgba(22, 22, 22, 1);
+  color: #FFFFFF;
+  /*background: red;*/
 }
+/**{
+   color: #FFFFFF;
+   border: 1px solid red!important;
+}*/
 
 h1 {
   @apply text-xl font-bold text-th-fgd-1 md:text-2xl;
@@ -103,6 +110,7 @@ li {
 
 tbody {
   @apply border-t border-th-bkg-4;
+  border: 1px solid red;
 }
 
 button {
@@ -194,7 +202,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: var(--bkg-4);
+  background-color: #FFFFFF;
 }
 
 body::-webkit-scrollbar-track {
@@ -507,12 +515,12 @@ body::-webkit-scrollbar-corner {
   perspective: 1000px;
 }
 
-.flipcard-front {
+/*.flipcard-front {
   @media screen and (min-width: 768px) {
     height: 100%;
     position: absolute;
   }
-}
+}*/
 
 .fadein-floating-element {
   animation: fadein 1s linear;

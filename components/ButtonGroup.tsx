@@ -18,11 +18,11 @@ const ButtonGroup: FunctionComponent<ButtonGroupProps> = ({
   names,
 }) => {
   return (
-    <div className="rounded-md bg-th-bkg-3">
-      <div className="relative flex">
+    <div className="">
+      <div className="tradeform-persent-text-general relative">
         {activeValue && values.includes(activeValue) ? (
           <div
-            className={`default-transition absolute left-0 top-0 h-full transform rounded-md bg-th-bkg-4`}
+            className={`default-transition absolute left-0 top-0`}
             style={{
               transform: `translateX(${
                 values.findIndex((v) => v === activeValue) * 100
@@ -33,7 +33,7 @@ const ButtonGroup: FunctionComponent<ButtonGroupProps> = ({
         ) : null}
         {values.map((v, i) => (
           <button
-            className={`${className} default-transition relative w-1/2 cursor-pointer rounded-md px-2 py-1.5 text-center text-xs font-normal
+            className={`${className} tradeform-persent-text default-transition relative
               ${
                 v === activeValue
                   ? `text-th-primary`

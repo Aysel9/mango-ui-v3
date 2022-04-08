@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { getTokenBySymbol } from '@blockworks-foundation/mango-client'
 import { useEffect, useMemo, useState } from 'react'
 import dayjs from 'dayjs'

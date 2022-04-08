@@ -583,7 +583,7 @@ const TradeHistoryTable = ({
                 {t('no-trades-found')}
               </div>
             ) : (
-              <div className="w-full rounded-md bg-th-bkg-1 py-6 text-center text-th-fgd-3">
+              <div style={{color: "white", fontFamily: "Roboto"}} className="w-full rounded-md  py-6 text-center">
                 {t('no-history')}
                 {asPath === '/account' ? (
                   <Link href={'/'} shallow={true}>

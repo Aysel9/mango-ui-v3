@@ -36,14 +36,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </div>
         ) : null}
         <input
-          className={`${className} h-10 w-full flex-1 rounded-md border bg-th-bkg-1 px-2 pb-px
-          text-th-fgd-1 ${
+          className={`${className} select-option-border limit-word-color h-10 w-full flex-1 bg-th-bkg-1 
+          ${
             error ? 'border-th-red' : 'border-th-bkg-4'
           } default-transition hover:border-th-fgd-4 
           focus:border-th-fgd-4 focus:outline-none 
           ${
             disabled
-              ? 'cursor-not-allowed bg-th-bkg-3 text-th-fgd-3 hover:border-th-fgd-4'
+              ? 'cursor-not-allowed limit-word-color hover:border-th-fgd-4'
               : ''
           }
           ${prefix ? 'pl-7' : ''}
@@ -56,7 +56,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           onChange={onChange}
         />
         {suffix ? (
-          <span className="absolute right-0 flex h-full items-center bg-transparent pr-2 text-xs text-th-fgd-4">
+          <span className="limit-word-color absolute right-0 flex h-full items-center bg-transparent pr-2">
             {suffix}
           </span>
         ) : null}

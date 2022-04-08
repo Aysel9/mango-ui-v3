@@ -230,27 +230,29 @@ export default function MarketPosition() {
   return (
     <>
       <div
+      style={{height: "100%", padding: "20px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "space-between"}}
         className={!connected && !isMobile ? 'blur-sm filter' : ''}
         id="perp-positions-tip"
       >
         {!isMobile ? (
-          <ElementTitle>
+          <ElementTitle className="sol-perp-position-title">
             {marketConfig.name} {t('position')}
           </ElementTitle>
+
         ) : null}
-        <div className="flex items-center justify-between pb-2">
-          <div className="font-normal leading-4 text-th-fgd-3">{t('side')}</div>
+        <div className="flex-div-row">
+          <div className="sol-perp-position-down">{t('side')}</div>
           {initialLoad ? (
-            <DataLoader />
+            <DataLoader  />
           ) : (
             <PerpSideBadge perpAccount={perpAccount}></PerpSideBadge>
           )}
         </div>
-        <div className="flex justify-between pb-2">
-          <div className="font-normal leading-4 text-th-fgd-3">
+        <div className="flex-div-row">
+          <div className="sol-perp-position-down">
             {t('position-size')}
           </div>
-          <div className="text-th-fgd-1">
+          <div className="sol-perp-position-down-count">
             {initialLoad ? (
               <DataLoader />
             ) : basePosition ? (
@@ -265,11 +267,11 @@ export default function MarketPosition() {
             )}
           </div>
         </div>
-        <div className="flex justify-between pb-2">
-          <div className="font-normal leading-4 text-th-fgd-3">
+        <div className="flex-div-row">
+          <div className="sol-perp-position-down">
             {t('notional-size')}
           </div>
-          <div className="text-th-fgd-1">
+          <div className="sol-perp-position-down-count">
             {initialLoad ? (
               <DataLoader />
             ) : notionalSize ? (
@@ -279,11 +281,11 @@ export default function MarketPosition() {
             )}
           </div>
         </div>
-        <div className="flex justify-between pb-2">
-          <div className="font-normal leading-4 text-th-fgd-3">
+        <div className="flex-div-row">
+          <div className="sol-perp-position-down">
             {t('average-entry')}
           </div>
-          <div className="text-th-fgd-1">
+          <div className="sol-perp-position-down-count">
             {initialLoad ? (
               <DataLoader />
             ) : avgEntryPrice ? (
@@ -293,11 +295,11 @@ export default function MarketPosition() {
             )}
           </div>
         </div>
-        <div className="flex justify-between pb-2">
-          <div className="font-normal leading-4 text-th-fgd-3">
+        <div className="flex-div-row">
+          <div className="sol-perp-position-down">
             {t('break-even')}
           </div>
-          <div className="text-th-fgd-1">
+          <div className="sol-perp-position-down-count">
             {initialLoad ? (
               <DataLoader />
             ) : breakEvenPrice ? (
@@ -307,9 +309,9 @@ export default function MarketPosition() {
             )}
           </div>
         </div>
-        <div className="flex justify-between pb-2">
+        <div className="flex-div-row">
           <Tooltip content={<SettlePnlTooltip />}>
-            <Tooltip.Content className="font-normal leading-4 text-th-fgd-3">
+            <Tooltip.Content className="sol-perp-position-down">
               {t('unsettled-balance')}
             </Tooltip.Content>
           </Tooltip>
@@ -320,7 +322,7 @@ export default function MarketPosition() {
             ) : (
               <LinkButton
                 onClick={() => handleSettlePnl(selectedMarket, perpAccount)}
-                className="ml-2 text-xs text-th-primary disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:underline"
+                className="sol-perp-position-down-yellow"
                 disabled={unsettledPnl === 0}
               >
                 {t('redeem-pnl')}
