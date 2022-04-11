@@ -71,7 +71,7 @@
 
 body {
   @apply font-body text-sm tracking-wider;
-  background: rgba(22, 22, 22, 1);
+  background: #161616;
   color: #FFFFFF;
   /*background: red;*/
 }

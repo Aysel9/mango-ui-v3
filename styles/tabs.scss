@@ -1,0 +1,36 @@
+@import "./formul.scss";
+.TabList{
+ 	@include size($w: clamp(350px, 95.7638vw, 1379px), $h: clamp(300px, 33.4027vw, 481px));
+      @include mp($p: 21px 27px 37px 32px);
+        border-radius: 4px;
+        background: #000000;
+        border: 1px solid red;
+	.Tab{
+		width:263px;
+		color:#888888;
+		border: 0px ;
+		border-radius: 0;
+	}
+	.tabactive{
+      color:#CCC51B;
+	}
+}
+
+
+    // .partTwo{
+       
+    //     .partTwo-title{
+    //         @include displayflex($fd: row, $ai: center, $jc: space-around);
+    //         @include font( $fm: "Roboto", $fw: 700, $fs: clamp(14px, 1.3888vw, 20px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+    //         @include size($w: 60%);
+    //         border-bottom: 2px solid #888888; 
+    //     }
+    //     .partTwo-main{
+    //         @include displayflex();
+    //         @include size($w: 100%, $h: clamp(280px, 25.5555vw, 368px));
+    //         @include mp($m: 28px 0 0 0);
+    //         background: #161616;
+    //         border-radius: 4px;
+    //     }
+
+    // }
