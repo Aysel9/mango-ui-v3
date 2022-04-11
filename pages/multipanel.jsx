@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useState} from 'react'
 import Tabs1 from '../components/Tabs1'
 export default function Multipanel(){
@@ -151,7 +152,7 @@ export default function Multipanel(){
             	})
             }
 			</div>
-			            <Tabs1 />
+			<Tabs1 />
 		</div>
 		)
 }

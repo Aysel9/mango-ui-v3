@@ -1,36 +1,62 @@
 @import "./formul.scss";
-.TabList{
- 	@include size($w: clamp(350px, 95.7638vw, 1379px), $h: clamp(300px, 33.4027vw, 481px));
-      @include mp($p: 21px 27px 37px 32px);
-        border-radius: 4px;
-        background: #000000;
-        border: 1px solid red;
-	.Tab{
-		width:263px;
-		color:#888888;
-		border: 0px ;
-		border-radius: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+.GeneralTabs{
+	@include size($w: clamp(350px, 95.7638vw, 1379px), $h: clamp(300px, 33.4027vw, 481px));
+	@include mp($p: 21px 27px 37px 32px, $m: auto);
+    border-radius: 4px;
+	background: #000000;
+	// border: 1px solid red;
+	.TabList{      	
+		.Tab{
+			@include size($w: clamp(100px, 18.2638vw, 263px));
+			border: 0px ;
+			border-radius: 0;
+			@include font($fm: "Roboto", $fw: 700, $fs: clamp(14px, 1.3888vw, 20px), $c: #888888, $ta: center, $ls: 0.3px);
+		}
+		.tabactive{
+	      color:#CCC51B;
+		}
 	}
-	.tabactive{
-      color:#CCC51B;
+	.partTwo-main{
+		@include displayflex($ai: flex-start, $jc: center);
+		@include size($w: 100%, $h: clamp(280px, 25.5555vw, 368px));
+		@include mp($m: 28px 0 0 0);
+		background: #161616;
+		border-radius: 8px;
+		table{
+			width: 100%;
+			border: 1px solid #000000;
+			border-radius: 8px;
+			border-collapse: separate;
+			border-spacing: 0 0 ;
+			tr{
+				border: 1px solid #000000;
+			}
+			tr th {
+				border: 1px solid #000000;
+				border-right: 0px solid #000000;
+				border-bottom: 0px solid #000000;	
+				@include size($w: auto, $h: 37px);
+				@include font($fm: "Roboto", $fw: 400, $fs: clamp(14px, 1.1111vw, 16px), $c: #888888, $ta: center, $ls: 0.3px);
+			}
+			tr td {
+				border: 1px solid #000000;
+				border-right: 0px solid #000000;
+				border-bottom: 0px solid #000000;	
+				@include size($w: auto, $h: 29px);
+				@include font($fm: "Roboto", $fw: 400, $fs: clamp(12px, 0.9722vw, 14px), $c: #888888, $ta: center, $ls: 0.3px);
+				button{
+					@include displayflex($fd: row, $ai: center, $jc: center);
+					@include size($w: clamp(55px, 6.1805vw, 89px), $h: 17px);
+					@include font($fm: "Roboto", $fw: 400, $fs: clamp(12px, 0.9722vw, 14px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+					background: #099317;
+					border-radius: 4px;
+					margin: auto;
+				}
+			}
+			.empty-td td{
+				@include size($w: auto, $h: 273px);
+			}
+		}
 	}
 }
-
-
-    // .partTwo{
-       
-    //     .partTwo-title{
-    //         @include displayflex($fd: row, $ai: center, $jc: space-around);
-    //         @include font( $fm: "Roboto", $fw: 700, $fs: clamp(14px, 1.3888vw, 20px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
-    //         @include size($w: 60%);
-    //         border-bottom: 2px solid #888888; 
-    //     }
-    //     .partTwo-main{
-    //         @include displayflex();
-    //         @include size($w: 100%, $h: clamp(280px, 25.5555vw, 368px));
-    //         @include mp($m: 28px 0 0 0);
-    //         background: #161616;
-    //         border-radius: 4px;
-    //     }
-
-    // }

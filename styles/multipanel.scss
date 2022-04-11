@@ -1,0 +1,217 @@
+@import './formul.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// -------------------MultiPanel Page Styles Start----------------------------
+.Multipanel{
+    @include mp($p: 0 26px);
+    .part-one{
+        @include displayflex($fd: row, $ai: center, $jc: center);
+        @include media($d: 1100px, $fd: column);
+        .coins-general-div{
+            @include mp($m: 20px 10px 20px 10px, $p: 33px 21px 10px 9px);
+            @include size($w: clamp(330px, 31.3888vw, 452px), $h: clamp(400px, 32.8472vw, 473px));
+            @include media($d: 1000px, $w: clamp(330px, 41.0909vw, 452px), $h: clamp(385px, 27.7777vw, 400px));
+            background: #000000;
+            border-radius: 4px;
+            .coins-name-icons{
+                @include displayflex($fd: row, $ai: center, $jc: space-between);
+                .coins-name{
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(18px, 1.7361vw, 25px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                }
+                .images-icon{
+                    @include displayflex($fd: row, $ai: center, $jc: flex-start);
+                    @include mp($m: 0 6.9444vw 0 0);
+                    img{
+                        @include mp(0 2px 0 2px);
+                    }
+                }
+                .icons-c-s{
+                    @include displayflex($fd: row, $ai: center, $jc: space-between);
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(18px, 1.7361vw, 25px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                    i{
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .outright-sp{
+                @include displayflex($fd: row, $ai: center, $jc: flex-start);
+                @include font( $fm: "Roboto", $fw: 400, $fs: clamp(16px, 1.3888vw, 20px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                .outright{
+                    width: 47%;
+                }
+                .sp{
+                    width: 53%;
+                }
+            }
+            .sell-buy{
+                width: 100%;
+                @include displayflex($fd: row, $ai: center, $jc: space-between);
+                position: relative;
+                .pos-abs{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translate(-50%,0);
+                    background: #3F3F3F;
+                    border-radius: 4px;
+                    @include displayflex();
+                    @include size($w: clamp(80px, 8.4027vw, 121px), $h: clamp(20px, 1.875vw, 27px));
+                    @include font( $fm: "Roboto", $fw: 400, $fs: clamp(16px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                }
+                .sell{
+                    @include size($w: clamp(130px, 14.2361vw, 205px), $h: clamp(70px, 7.0833vw, 102px));
+                    @include displayflex($fd: column, $jc: space-between);
+                    @include mp($p: 5px);
+                    background: #D30000;
+                    border-radius: 4px;
+                    @include media($d: 1000px, $w: clamp(145px, 18.6vw, 186px));
+                    
+                    .sell-in{
+                        align-self: flex-start;
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(12px, 1.1111vw, 16px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                    }
+                    .sell-main{
+                        align-self: center;            
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(14px, 1.3888vw, 20px), $c: #FFFFFF, $ta: left, $ls: 0.3px);        
+                        span{
+                            @include font( $fm: "Roboto", $fw: 400, $fs: clamp(18px, 2.0833vw, 30px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                        }
+                    }
+                    .sell-low{
+                        align-self: flex-start;
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(11px, 0.8333vw, 12px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                    }
+                }
+                .buy{
+                    @include size($w: clamp(150px, 14.2361vw, 205px), $h: clamp(70px, 7.0833vw, 102px));
+                    @include displayflex($fd: column, $jc: space-between);
+                    @include mp($p: 5px);
+                    background: #11D300;
+                    @include media($d: 1000px, $w: clamp(145px, 18.6vw, 186px));
+                    border-radius: 4px;
+                    .buy-in{
+                        align-self: flex-end;
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(12px, 1.1111vw, 16px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                    }
+                    .buy-main{
+                        align-self: center;   
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(14px, 1.3888vw, 20px), $c: #FFFFFF, $ta: left, $ls: 0.3px);        
+                        span{
+                            @include font( $fm: "Roboto", $fw: 400, $fs: clamp(18px, 2.0833vw, 30px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                        }
+                    }
+                    .buy-low{
+                        align-self: flex-end;
+                        @include font( $fm: "Roboto", $fw: 400, $fs: clamp(11px, 0.8333vw, 12px), $c: #FFFFFF, $ta: left, $ls: 0.3px);
+                    }
+                }
+            }
+            .bid-offer{
+                @include size($w: 100%);
+                @include mp($m: 10px 0 0 0);
+                @include displayflex($fd: row, $ai: center, $jc: space-between);
+                .arrow-l{
+                    @include size($w: clamp(18px, 1.7361vw, 25px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    @include font($fs: clamp(16px, 1.5277vw, 22px), $c: #FFFFFF, $ta: center);
+                    border-radius: 4px;
+                    background: #D30000;
+                }
+                .bid{
+                    @include size($w: clamp(90px, 9.6527vw, 139px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #D30000;
+                    border-radius: 4px;
+                }
+                .rfs{
+                    @include size($w: clamp(60px, 4.9305vw, 71px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #3F3F3F;
+                    border-radius: 4px;
+                }
+                .offer{
+                    @include size($w: clamp(90px, 9.6527vw, 139px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #11D300;
+                    border-radius: 4px;
+                }
+                .arrow-r{
+                    @include size($w: clamp(18px, 1.7361vw, 25px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    @include font($fs: clamp(16px, 1.5277vw, 22px), $c: #FFFFFF, $ta: center);
+                    border-radius: 4px;
+                    background: #11D300;
+                }
+            }
+            .usd-1m-ager{
+                @include size($w: 100%);
+                @include mp($m: 10px 0 0 0);
+                @include displayflex($fd: row, $ai: center, $jc: space-between);
+                .usd{
+                    @include size($w: clamp(60px, 4.9305vw, 71px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #3F3F3F;
+                    border-radius: 4px;
+                }
+                .onem{
+                    @include size($w: clamp(160px, 18.125vw, 261px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #3F3F3F;
+                    border-radius: 4px;
+                }
+                .ager{
+                    @include size($w: clamp(60px, 4.9305vw, 71px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(14px, 1.25vw, 18px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #3F3F3F;
+                    border-radius: 4px;
+                }
+            }
+            .all-up-down-numbers{
+                @include size($w: 100%);
+                @include mp($m: 10px 0 0 0);
+                .fourthly-num{
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(12px, 1.1111vw, 16px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    @include displayflex($fd: row, $ai: center, $jc: center);
+                    background: #212121;
+                    border-radius: 4px;
+                    .two-num{
+                         @include size($w: clamp(90px, 9.6527vw, 139px), $h: clamp(15px, 1.5972vw, 23px));
+                         background: linear-gradient(180deg, #D30000 0%, #AB0000 100%);
+                         border-radius: 4px;
+                    }
+                    .three-num{
+                         @include size($w: clamp(90px, 9.6527vw, 139px), $h: clamp(15px, 1.5972vw, 23px));
+                         background: linear-gradient(180deg, #11D300 0%, #13B406 100%);
+                         border-radius: 4px;
+                    }
+                    .one-num{
+                        margin-right: 25px;
+                    }
+                    .fourth-num{
+                        margin-left: 25px;
+                    }
+                }
+            }
+            .sub-add{
+                @include displayflex();
+                .sub-add-button{
+                    @include displayflex();
+                    @include size($w: clamp(40px, 4.0972vw, 59px), $h: clamp(15px, 1.5972vw, 23px));
+                    @include font( $fm: "Roboto", $fw: 500, $fs: clamp(20px, 2.0833vw, 30px), $c: #FFFFFF, $ta: center, $ls: 0.3px);
+                    background: linear-gradient(180deg, #2B2B2B 0%, #565656 100%);
+                    border-radius: 4px;
+                    @include mp($m: 0 4px 0 4px);
+                }
+            }
+        }
+    }
+
+}
+
+
+// -------------------MultiPanel Page Styles End------------------------------

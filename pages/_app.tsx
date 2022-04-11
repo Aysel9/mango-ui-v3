@@ -41,6 +41,7 @@ import { HuobiWalletAdapter } from '@solana/wallet-adapter-huobi'
 import { GlowWalletAdapter } from '@solana/wallet-adapter-glow'
 import '../styles/homepage.scss'
 import '../styles/tabs.scss'
+import '../styles/multipanel.scss'
 
 
 const SENTRY_URL = process.env.NEXT_PUBLIC_SENTRY_URL
